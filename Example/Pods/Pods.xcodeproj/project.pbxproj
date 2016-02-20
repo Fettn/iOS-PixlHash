@@ -10,6 +10,11 @@
 		08F5B025ADCFA994BB0767AA46DD2C43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		1F6704D3536A88D1C46125DE33B1BA62 /* PixlHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6463793F1DCF822F570955BFCE4D5B /* PixlHash-dummy.m */; };
 		27A570F53A5D1875CBE8A6EA402B1722 /* PixlHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B573E93C75FBB8A7B4E8C85F4B98094 /* PixlHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C58FA101C78D97D00382CB3 /* PixlHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C58FA0E1C78D97D00382CB3 /* PixlHash.h */; };
+		4C58FA111C78D97D00382CB3 /* PixlHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C58FA0E1C78D97D00382CB3 /* PixlHash.h */; };
+		4C58FA121C78D97D00382CB3 /* PixlHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C58FA0F1C78D97D00382CB3 /* PixlHash.m */; };
+		4C58FA151C78DF0700382CB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C58FA141C78DF0700382CB3 /* UIKit.framework */; };
+		4C58FA161C78DF9D00382CB3 /* PixlHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C58FA0F1C78D97D00382CB3 /* PixlHash.m */; };
 		895EAA451BDD1191F08F1FEA67A163D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		BAE29AF950F7D0F75106D6CB387DD7E7 /* Pods-PixlHash_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6A506677D12D5FD92AF3C7AB040CB8 /* Pods-PixlHash_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE596C2DF76AE9A7D2AB7B28732FBE77 /* Pods-PixlHash_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6807E3DB752A5D38C85E836D3A2E70B1 /* Pods-PixlHash_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,7 +22,6 @@
 		E49E6197869C196D03A26E8A45D02433 /* Pods-PixlHash_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFEE6F5B4EDFD1B1679CE88D3E47D8A /* Pods-PixlHash_Tests-dummy.m */; };
 		E8888ADEAC47805DBBDF87A1A47E9AFC /* PixlHash.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AEC15575EAC9ED40A43C9C42DBFD695A /* PixlHash.bundle */; };
 		EF1BE7EFAE754A7401F39D9A2667D083 /* Pods-PixlHash_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68339D9BBEED5C0996EDB85D46577205 /* Pods-PixlHash_Example-dummy.m */; };
-		FBB258F4EA2B6846090E34BE30B74824 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA96D283B4CCBADDCCA7CC579FAE3A9 /* ReplaceMe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +57,10 @@
 		3E04718413A5196AEB5BF315BBF41C8A /* Pods-PixlHash_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixlHash_Example-resources.sh"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3FFEE36E93C9E6D212F615D7A5F2903C /* Pods-PixlHash_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixlHash_Example-frameworks.sh"; sourceTree = "<group>"; };
+		4C58FA0E1C78D97D00382CB3 /* PixlHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixlHash.h; sourceTree = "<group>"; };
+		4C58FA0F1C78D97D00382CB3 /* PixlHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixlHash.m; sourceTree = "<group>"; };
+		4C58FA141C78DF0700382CB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4C6A506677D12D5FD92AF3C7AB040CB8 /* Pods-PixlHash_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PixlHash_Example-umbrella.h"; sourceTree = "<group>"; };
-		4DA96D283B4CCBADDCCA7CC579FAE3A9 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		4EB6658FBA0FF4B16C6C83CDCD47CC17 /* Pods-PixlHash_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixlHash_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5B573E93C75FBB8A7B4E8C85F4B98094 /* PixlHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PixlHash-umbrella.h"; sourceTree = "<group>"; };
 		5F32D57CA9D50D163D66569814F0BC0B /* Pods-PixlHash_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PixlHash_Example.modulemap"; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C58FA151C78DF0700382CB3 /* UIKit.framework in Frameworks */,
 				CF2EF2E90F14E539F4214EAD5FF06C69 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +143,8 @@
 		32436308E7F53CBD5474557B48FC6619 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4DA96D283B4CCBADDCCA7CC579FAE3A9 /* ReplaceMe.m */,
+				4C58FA0E1C78D97D00382CB3 /* PixlHash.h */,
+				4C58FA0F1C78D97D00382CB3 /* PixlHash.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C58FA141C78DF0700382CB3 /* UIKit.framework */,
 				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
 			);
 			name = Frameworks;
@@ -262,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE29AF950F7D0F75106D6CB387DD7E7 /* Pods-PixlHash_Example-umbrella.h in Headers */,
+				4C58FA111C78D97D00382CB3 /* PixlHash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A570F53A5D1875CBE8A6EA402B1722 /* PixlHash-umbrella.h in Headers */,
+				4C58FA101C78D97D00382CB3 /* PixlHash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C58FA161C78DF9D00382CB3 /* PixlHash.m in Sources */,
 				EF1BE7EFAE754A7401F39D9A2667D083 /* Pods-PixlHash_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,8 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C58FA121C78D97D00382CB3 /* PixlHash.m in Sources */,
 				1F6704D3536A88D1C46125DE33B1BA62 /* PixlHash-dummy.m in Sources */,
-				FBB258F4EA2B6846090E34BE30B74824 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +551,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PixlHash/PixlHash-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PixlHash/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PixlHash/PixlHash.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -638,7 +650,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PixlHash/PixlHash-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PixlHash/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PixlHash/PixlHash.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pxh View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
                 <viewController id="whP-gf-Uak" customClass="PxhViewController" sceneMemberID="viewController">
@@ -16,8 +16,47 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X5C-uz-BWK">
+                                <rect key="frame" x="0.0" y="83" width="600" height="517"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your text ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyO-ja-ta3">
+                                <rect key="frame" x="20" y="28" width="465" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="whP-gf-Uak" id="ALT-CF-Eax"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl7-Tu-BBl">
+                                <rect key="frame" x="493" y="28" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NlO-Ca-vKx"/>
+                                    <constraint firstAttribute="width" constant="87" id="YDG-Pl-aeJ"/>
+                                </constraints>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="didTapGenerateButton:" destination="whP-gf-Uak" eventType="touchUpInside" id="V67-1g-c9b"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nyO-ja-ta3" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="8" id="5A4-bo-dKc"/>
+                            <constraint firstAttribute="trailing" secondItem="sl7-Tu-BBl" secondAttribute="trailing" constant="20" id="9D0-IM-leY"/>
+                            <constraint firstAttribute="trailing" secondItem="X5C-uz-BWK" secondAttribute="trailing" id="VTh-N2-A8U"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="X5C-uz-BWK" secondAttribute="bottom" id="WVj-hF-4Vn"/>
+                            <constraint firstItem="sl7-Tu-BBl" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="8" id="eqW-AV-YP9"/>
+                            <constraint firstItem="nyO-ja-ta3" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" id="hGZ-RR-PRh"/>
+                            <constraint firstItem="sl7-Tu-BBl" firstAttribute="leading" secondItem="nyO-ja-ta3" secondAttribute="trailing" constant="8" id="oyh-yd-Bbo"/>
+                            <constraint firstItem="X5C-uz-BWK" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="yqQ-Fj-FeL"/>
+                            <constraint firstItem="X5C-uz-BWK" firstAttribute="top" secondItem="sl7-Tu-BBl" secondAttribute="bottom" constant="25" id="yrF-Um-Arg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pxhImageView" destination="X5C-uz-BWK" id="GdK-uE-0kS"/>
+                        <outlet property="pxhTextField" destination="nyO-ja-ta3" id="1fW-AZ-eHw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
