@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'PixlHash_Example', :exclusive => true do
+  pod 'PixlHash', :path => '../'
+end
+
+target 'PixlHash_Tests', :exclusive => true do
+  pod 'PixlHash', :path => '../'
+
+  
+end

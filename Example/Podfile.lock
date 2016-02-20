@@ -1,0 +1,14 @@
+PODS:
+  - PixlHash (0.1.0)
+
+DEPENDENCIES:
+  - PixlHash (from `../`)
+
+EXTERNAL SOURCES:
+  PixlHash:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PixlHash: a34205a24a9680e5161a54f29af683d30b6ffa01
+
+COCOAPODS: 0.39.0
