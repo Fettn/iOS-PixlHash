@@ -8,6 +8,7 @@
 
 #import "PixlHash.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #define WIDTH 16
 #define HEIGHT 16
@@ -52,9 +53,50 @@
     const char *inputChar = [input cStringUsingEncoding:NSASCIIStringEncoding];
     NSData *inputData = [NSData dataWithBytes:inputChar length:strlen(inputChar)];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH] = {0};
-    CC_SHA256(inputData.bytes, inputData.length, digest);
+    CC_SHA256(inputData.bytes, (int)inputData.length, digest);
     NSData *output = [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
-    return [UIImage imageWithData:output];
+    
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, output.bytes, self.tileWidth * self.tileHeight * 4, NULL);
+    
+    CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
+    CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault;
+    CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
+    CGImageRef imageRef = CGImageCreate(self.tileWidth, self.tileHeight, 8, 32, 4 * self.tileWidth, colorSpaceRef, bitmapInfo, provider, NULL, NO, renderingIntent);
+    return [UIImage imageWithCGImage:imageRef];
+}
+
+#pragma mark Private
+
+- (int)getColor:(const char *)input fromStartValue:(int)start {
+    int ret = 0xFF;
+    for (int offset = 0; offset < 3; offset++) {
+        ret *= 256;
+        ret += input[start + offset];
+    }
+    return ret;
+}
+
+- (int)calculateColorDistanceBetweenFirstColor:(int)color1 andSecondColor:(int)color2 {
+    int sum = 0;
+    for (int i = 0; i < COLOR_SIZE; i++) {
+        int diff = color1 % 256 - color2 % 256;
+        sum += diff * diff;
+        color1 /= 256;
+        color2 /= 256;
+    }
+    return sum;
+}
+
+- (void)pickColors:(NSData *)input selectFirstColor:(int **)color1 secondColor:(int **)color2 {
+    // int color1 = 0xFFFFFF;
+    // int color2 = 0;
+    for (int start = 0; start < input.length - 6; start++) {
+        *color1 = [self getColor:input.bytes fromStartValue:start];
+        *color2 = [self getColor:input.bytes fromStartValue:start + 3];
+        if ([self calculateColorDistanceBetweenFirstColor:color1 andSecondColor:color2] > MINIMUM_COLOR_DISTANCE) {
+            break;
+        }
+    }
 }
 
 @end
@@ -110,39 +152,6 @@ public class PixlHash {
         int coordinateData = (int) ((data >> (16 - 7 - offset)) & 0x7F);
         int setData = (int) ((data >> (16 - 8 - offset)) % 2);
         return new int[]{coordinateData % 8, coordinateData / 8, setData};
-    }
-    
-    private static int[] pickColors(byte[] input) {
-        int color1 = 0xFFFFFFFF;
-        int color2 = 0;
-        for (int start = 0; start < input.length - 6; start++) {
-            color1 = getColor(input, start);
-            color2 = getColor(input, start + 3);
-            if (colorDistance(color1, color2) > MINIMUM_COLOR_DISTANCE) {
-                break;
-            }
-        }
-        return new int[]{color1, color2};
-    }
-    
-    private static int colorDistance(int color1, int color2) {
-        int sum = 0;
-        for (int i = 0; i < COLOR_SIZE; i++) {
-            int diff = color1 % 256 - color2 % 256;
-            sum += diff * diff;
-            color1 /= 256;
-            color2 /= 256;
-        }
-        return sum;
-    }
-    
-    private static int getColor(byte[] input, int start) {
-        int ret = 0xFF;
-        for (int offset = 0; offset < 3; offset++) {
-            ret *= 256;
-            ret += input[start + offset];
-        }
-        return ret;
     }
 }
 
