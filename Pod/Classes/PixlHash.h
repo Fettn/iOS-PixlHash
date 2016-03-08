@@ -2,9 +2,6 @@
 //  PixlHash.h
 //  Pods
 //
-//  Created by Kim Lan Bui on 20/02/16.
-//
-//
 
 #import <UIKit/UIKit.h>
 
