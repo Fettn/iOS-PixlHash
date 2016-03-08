@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                      This library is used to convert a String into a visual representation. This representation is returned as an UIImage. It can be used as an Avatar or other form of identification.
                        DESC
 
   s.homepage         = "https://github.com/Fettn/iOS-PixlHash"
